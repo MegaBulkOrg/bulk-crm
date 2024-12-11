@@ -12,6 +12,8 @@ app/dist
 app/dist-ssr
 app/*.local
 
+# rest-api/node_modules
+
 # Editor directories and files
 app/.vscode/*
 app/!.vscode/extensions.json
