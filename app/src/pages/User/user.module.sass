@@ -1,0 +1,10 @@
+@import '../../global_styles/vars.module'
+@import '../../global_styles/mixins.module'
+
+.container
+    display: flex
+    gap: 30px
+    @media (max-width: $tablet)
+        flex-direction: column
+.user__msg
+    @include dataFetchingMsg

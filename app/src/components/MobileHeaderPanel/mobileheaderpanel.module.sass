@@ -1,0 +1,28 @@
+@import '../../global_styles/vars.module'
+@import '../../global_styles/mixins.module'
+
+.mPanel
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 15px
+    background-color: $blockCommonBgColor
+    border-radius: 24px
+    box-shadow: $blockCommonShadow
+    &__logo
+        width: auto
+        height: 40px
+        cursor: pointer
+    &__right
+        display: flex
+        align-items: center
+        gap: 25px
+        font-size: 25px
+    & svg
+        cursor: pointer
+    &__meAvatar
+        width: 30px
+        height: 30px
+        object-fit: cover
+        object-position: center
+        border-radius: 100%

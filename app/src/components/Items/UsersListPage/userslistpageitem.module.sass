@@ -1,0 +1,242 @@
+@import '../../../global_styles/vars.module'
+@import '../../../global_styles/mixins.module'
+
+.tableItem
+    &__wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: 50px
+        padding: 20px 30px
+        border-radius: 24px
+        background-color: $blockCommonBgColor
+        box-shadow: $blockCommonShadow
+        transition: background-color .3s ease
+        &:hover:not(:focus-visible)
+            background-color: $brandBlueColor
+        &:focus-visible
+            background-color: $brandBlueColor
+        &:active:not(:focus-visible)
+            background-color: $brandBlueColor
+        &:hover:not(:focus-visible) .tableItem__leftFio p
+            color: $blockCommonBgColor
+        &:focus-visible .tableItem__leftFio p
+            color: $blockCommonBgColor
+        &:active:not(:focus-visible) .tableItem__leftFio p
+            color: $blockCommonBgColor
+        &:hover:not(:focus-visible) .tableItem__infoItem p
+            color: $blockCommonBgColor
+        &:focus-visible .tableItem__infoItem p
+            color: $blockCommonBgColor
+        &:active:not(:focus-visible) .tableItem__infoItem p
+            color: $blockCommonBgColor
+        &:hover:not(:focus-visible) .tableItem__infoItem__valueLabel
+            color: $blockCommonBgColor
+            border-color: $blockCommonBgColor
+        &:focus-visible .tableItem__infoItem__valueLabel
+            color: $blockCommonBgColor
+            border-color: $blockCommonBgColor
+        &:active:not(:focus-visible) .tableItem__infoItem__valueLabel
+            color: $blockCommonBgColor
+            border-color: $blockCommonBgColor
+        @media (max-width: $smallDesktop)
+            gap: 30px
+        @media (max-width: $bigTablet)
+            flex-direction: column
+            gap: 20px
+        @media (max-width: $mobile)
+            padding: 20px
+    &__left
+        display: flex
+        align-items: center
+        gap: 20px
+        & img
+            width: 50px
+            height: 50px
+            object-fit: cover
+            object-position: center
+            border-radius: 100%
+        &Fio
+            display: flex
+            flex-direction: column
+            gap: 5px
+            width: 250px
+            @media (max-width: $smallDesktop)
+                width: 180px
+            @media (max-width: $bigTablet)
+                width: auto
+            & p:nth-child(1)
+                margin: 0
+                font-weight: 700
+                font-size: 16px
+                line-height: 150%
+                color: $titleColor
+                transition: color .3s ease
+            & p:nth-child(2)
+                margin: 0
+                font-weight: 400
+                font-size: 14px
+                color: $secondGreyColor
+                transition: color .3s ease
+    &__divider
+        width: 100%
+        height: 1px
+        background-color: $dividerColor
+    &__info
+        display: flex
+        justify-content: space-between
+        gap: 25px
+        flex: 1
+        @media (max-width: $bigTablet)
+            flex-wrap: wrap
+        &Item
+            display: flex
+            flex-direction: column
+            gap: 10px
+            &__title
+                margin: 0
+                font-weight: 400
+                font-size: 14px
+                color: $secondGreyColor
+                transition: color .3s ease
+            &__value
+                margin: 0
+                font-weight: 400
+                font-size: 16px
+                line-height: 150%
+                color: $titleColor
+                transition: color .3s ease
+                @media (max-width: $bigTablet)
+                    display: flex
+                    gap: 10px
+                &Label
+                    padding: 5px 10px
+                    font-weight: 600
+                    font-size: 12px
+                    line-height: 100%
+                    text-align: center
+                    color: $brandGreyColor
+                    border: 1px solid $brandGreyColor
+                    border-radius: 4px
+                    transition-property: color, border-color
+                    transition-duration: .3s
+                    transition-timing-function: ease
+    &__right
+        width: 100px
+
+.gridItem
+    &:hover:not(:focus-visible) &__wrapper
+        background-color: $secondBlueColor
+    &:focus-visible &__wrapper
+        background-color: $secondBlueColor
+    &:active:not(:focus-visible) &__wrapper
+        background-color: $secondBlueColor
+    &:hover:not(:focus-visible) &__up
+        background-color: $brandBlueColor
+    &:focus-visible &__up
+        background-color: $brandBlueColor
+    &:active:not(:focus-visible) &__up
+        background-color: $brandBlueColor
+    &:hover:not(:focus-visible) p
+        color: $blockCommonBgColor
+    &:focus-visible p
+        color: $blockCommonBgColor
+    &:active:not(:focus-visible) p
+        color: $blockCommonBgColor
+    &:hover:not(:focus-visible) span
+        border: 1px solid $blockCommonBgColor
+        color: $blockCommonBgColor
+    &:focus-visible span
+        border: 1px solid $blockCommonBgColor
+        color: $blockCommonBgColor
+    &:active:not(:focus-visible) span
+        border: 1px solid $blockCommonBgColor
+        color: $blockCommonBgColor
+    &:hover:not(:focus-visible) &__up__imgWrapper::before
+        border: 2px solid $blockCommonBgColor
+    &:focus-visible &__up__imgWrapper::before
+        border: 2px solid $blockCommonBgColor
+    &:active:not(:focus-visible) &__up__imgWrapper::before
+        border: 2px solid $blockCommonBgColor
+    &:hover:not(:focus-visible) &__down__indicator__value, &:hover:not(:focus-visible) &__down__indicator__title
+        color: $blockCommonBgColor
+    &:focus-visible &__down__indicator__value, &:focus-visible &__down__indicator__title
+        color: $blockCommonBgColor
+    &:active:not(:focus-visible) &__down__indicator__value,  &:active:not(:focus-visible) &__down__indicator__title
+        color: $blockCommonBgColor
+    &__wrapper
+        display: flex
+        flex-direction: column
+        height: 100%
+        border-radius: 24px
+        padding: 10px
+        background-color: $blockCommonBgColor
+        transition: background-color .3s ease
+    &__up
+        position: relative
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: space-between
+        flex: 1
+        padding: 15px 30px 25px 30px
+        border-radius: 24px
+        background-color: $contentBgColor
+        transition: background-color .3s ease
+        @media (max-width: $mobile)
+            padding: 20px 0
+        &__container
+            display: flex
+            flex-direction: column
+            align-items: center
+        @include userImg
+        &__name
+            margin-bottom: 5px
+            font-weight: 700
+            font-size: 16px
+            text-align: center
+            color: $titleColor
+            transition: color .3s ease
+        &__job
+            margin-bottom: 15px
+            font-weight: 400
+            font-size: 14px
+            line-height: 150%
+            text-align: center
+            color: $titleColor
+            transition: color .3s ease
+        &__specialization
+            justify-self: end
+            padding: 5px 10px
+            font-weight: 600
+            font-size: 12px
+            line-height: 100%
+            text-align: center
+            color: $brandGreyColor
+            border: 1px solid $brandGreyColor
+            border-radius: 4px
+            transition-property: border, color
+            transition-duration: .3s
+            transition-timing-function: ease
+    &__down
+        display: flex
+        justify-content: space-between
+        padding: 25px 10px 15px 10px
+        &__indicator
+            display: flex
+            flex-direction: column
+            align-items: center
+            gap: 15px
+            &__value
+                text-align: center
+                font-weight: 700
+                font-size: 26px
+                line-height: 100%
+                color: $titleColor
+                transition: color .3s ease
+            &__title
+                text-align: center
+                font-weight: 400
+                font-size: 14px
+                color: $secondGreyColor
+                transition: color .3s ease

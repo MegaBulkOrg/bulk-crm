@@ -1,0 +1,54 @@
+@import '../../global_styles/mixins.module'
+@import '../../global_styles/vars.module'
+
+.searchresults
+    &__msg
+        @include dataFetchingMsg
+    &__list
+        display: flex
+        flex-direction: column
+        gap: 30px
+        @media (max-width: $mobile)
+            gap: 20px
+    &__item
+        &__wrapper        
+            display: block
+            padding: 20px 30px
+            background-color: $blockCommonBgColor
+            border-radius: 24px
+            box-shadow: $blockCommonShadow
+            // для записей
+            cursor: pointer
+            transition: background-color .3s ease
+            &:hover:not(:focus-visible)
+                background-color: $brandBlueColor
+            &:focus-visible
+                background-color: $brandBlueColor
+            &:active:not(:focus-visible)
+                background-color: $brandBlueColor
+            &:hover:not(:focus-visible) .searchresults__item__title,
+            &:hover:not(:focus-visible) .searchresults__item__description p
+                color: $blockCommonBgColor
+            &:focus-visible .searchresults__item__title,
+            &:focus-visible .searchresults__item__description p
+                color: $blockCommonBgColor
+            &:active:not(:focus-visible) .searchresults__item__title,
+            &:active:not(:focus-visible) .searchresults__item__description p
+                color: $blockCommonBgColor
+            @media (max-width: $mobile)
+                padding: 20px
+        &__title            
+            margin: 0
+            font-weight: 700
+            font-size: 18px
+            line-height: 144%
+            color: $titleColor
+            transition: color .3s ease
+        &__description p
+            margin: 0
+            font-weight: 400
+            font-size: 16px
+            line-height: 150%
+            color: $titleColor
+            opacity: 0.7
+            transition: color .3s ease

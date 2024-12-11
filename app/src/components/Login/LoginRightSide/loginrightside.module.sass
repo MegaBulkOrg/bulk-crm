@@ -1,0 +1,62 @@
+@import '../../../global_styles/vars.module'
+@import '../../../global_styles/mixins.module'
+
+.loginrightside
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    gap: 35px
+    width: 50%
+    background-color: $blockCommonBgColor
+    border-top-right-radius: 24px
+    border-bottom-right-radius: 24px
+    @media (max-width: $mobile)
+        width: 100%
+    &__title
+        font-weight: 700
+        font-size: 22px
+        text-align: center
+        color: $titleColor
+        @media (max-width: $mobile)
+            font-size: 18px
+            line-height: 144%
+    &__form
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 50px
+        width: 100%
+        @media (max-width: $mobile)
+            gap: 40px
+        &__fieldsWrapper
+            @include commonModalForm
+            width: 400px
+            gap: 30px
+            @media (max-width: $tablet)
+                width: 300px
+                gap: 25px
+            @media (max-width: $mobile)
+                width: 100%
+    &__submitBtn
+        @include commonButton
+        align-self: center
+        &:hover:not(:focus-visible) svg
+            transform: translateX(10px)
+        &:focus-visible svg
+            transform: translateX(10px)
+        &:active:not(:focus-visible) svg
+            transform: translateX(10px)
+        @media (max-width: $mobile)
+            align-self: unset
+            justify-content: center
+        & svg
+            transition: transform .3s ease
+    &__authErrorMsg
+        font-weight: 600
+        font-size: 16px
+        text-align: center
+        color: $errorColor
+    &__spinner
+        font-size: 45px
+        color: $brandBlueColor

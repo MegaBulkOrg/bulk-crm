@@ -1,0 +1,14 @@
+@import '../../global_styles/vars.module'
+
+.container
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(2, auto)
+    gap: 45px 30px
+    @media (max-width: $tablet)
+        // grid убираем ради сладера в блоке со сделками
+        display: flex
+        flex-direction: column
+    @media (max-width: $mobile)
+        gap: 30px
+        padding: 0 10px

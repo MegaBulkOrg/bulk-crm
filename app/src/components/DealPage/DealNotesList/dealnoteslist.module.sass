@@ -1,0 +1,52 @@
+@import '../../../global_styles/vars.module'
+@import '../../../global_styles/mixins.module'
+
+.container
+    display: flex
+    flex-direction: column
+    gap: 25px
+    @media (max-width: $mobile)
+        gap: 20px
+.dealnoteslist
+    flex: 1
+    &__descriptionWrapper
+        display: flex
+        flex-direction: column
+        gap: 5px
+        @media (max-width: $mobile)
+            padding: 0 10px
+    &__descriptionTitle
+        margin: 0
+        // в Chrome без text-align заголовок выравнивается по центру
+        text-align: left
+        font-weight: 700
+        font-size: 18px
+        line-height: 144%
+        color: $titleColor
+        @media (max-width: $mobile)
+            font-size: 16px
+            line-height: 150%
+    &__description p
+        font-weight: 400
+        font-size: 16px
+        line-height: 150%
+        color: $titleColor
+        opacity: 0.7
+    &__msg
+        @include dataFetchingMsg
+    &__controls
+        display: flex
+        justify-content: space-between
+    &__addButton
+        @include commonButton
+    &__sortBtn
+        @include sortBtn
+    &__dealsList
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-template-rows: repeat(4, auto)
+        gap: 30px
+        @media (max-width: $bigTablet)
+            grid-template-columns: repeat(1, 1fr)
+        @media (max-width: $mobile)
+            gap: 20px

@@ -1,0 +1,114 @@
+@import '../../global_styles/vars.module'
+
+.sidebar
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    max-width: 200px
+    min-height: 700px
+    padding: 40px 25px
+    border-radius: 24px
+    background-color: $blockCommonBgColor
+    box-shadow: $blockCommonShadow
+    // cтили для сайдбара когда его изначально на странице нет
+    @media (max-width: $mobile)
+        height: 100%
+    &__up
+        display: flex
+        flex-direction: column
+        gap: 40px
+    &__logo
+        width: auto
+        height: 50px
+    &__menu
+        display: flex
+        flex-direction: column
+        gap: 10px
+        &ItemLink
+            position: relative
+            display: flex
+            align-items: center
+            gap: 15px
+            padding: 10px
+            font-weight: 400
+            font-size: 16px
+            color: $brandGreyColor
+            border-radius: 10px
+            transition-property: color, background-color
+            transition-duration: .3s
+            transition-timing-function: ease
+            &:hover:not(:focus-visible)
+                color: $brandBlueColor
+                background-color: $sidebarMenuActiveItemBgColor
+            &:focus-visible
+                color: $brandBlueColor
+                background-color: $sidebarMenuActiveItemBgColor
+            &:active:not(:focus-visible)
+                color: $brandBlueColor
+                background-color: $sidebarMenuActiveItemBgColor
+        &ItemLinkActive
+            color: $brandBlueColor
+            background-color: $sidebarMenuActiveItemBgColor
+            &::after
+                content: ''
+                position: absolute
+                top: 0
+                right: -25px
+                bottom: 0
+                width: 4px
+                background-color: $brandBlueColor
+                border-radius: 2px
+        &AddUserBtn
+            position: relative
+            display: flex
+            align-items: center
+            gap: 15px
+            padding: 10px
+            font-weight: 400
+            font-size: 16px
+            text-align: left
+            color: $brandGreyColor
+            border: none
+            background-color: transparent
+            border-radius: 10px
+            transition-property: color, background-color
+            transition-duration: .3s
+            transition-timing-function: ease
+            cursor: pointer
+            &:hover:not(:focus-visible)
+                color: $brandBlueColor
+                background-color: $sidebarMenuActiveItemBgColor
+            &:focus-visible
+                color: $brandBlueColor
+                background-color: $sidebarMenuActiveItemBgColor
+            &:active:not(:focus-visible)
+                color: $brandBlueColor
+                background-color: $sidebarMenuActiveItemBgColor
+    &__down
+        display: flex
+        flex-direction: column
+        gap: 50px
+    &__copyright
+        margin: 0
+        font-weight: 700
+        font-size: 16px
+        color: $titleColor
+    &__logout
+        display: flex
+        gap: 15px
+        border: none
+        background-color: transparent
+        font-weight: 600
+        font-size: 16px
+        color: $brandGreyColor
+        cursor: pointer
+        transition: color .3s ease
+        &:hover:not(:focus-visible)
+            color: $brandBlueColor
+        &:focus-visible
+            color: $brandBlueColor
+        &:active:not(:focus-visible)
+            color: $brandBlueColor
+    &__spinner
+        font-size: 45px
+        color: $brandBlueColor

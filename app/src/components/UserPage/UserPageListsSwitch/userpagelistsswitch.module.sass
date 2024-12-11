@@ -1,0 +1,44 @@
+@import '../../../global_styles/vars.module'
+
+.userpagelistsswitch
+    position: relative
+    display: flex
+    width: 310px
+    height: 48px
+    background-color: $headerDateBgColor
+    border-radius: 24px
+    @media (max-width: $mobile)
+        width: 212px
+    &__switcher
+        position: absolute
+        top: 4px
+        bottom: 4px
+        width: 50%
+        background-color: $brandBlueColor
+        border-radius: 20px
+        transition: left .3s ease
+        &__clients
+            left: 4px
+        &__deals
+            left: 151px
+            @media (max-width: $mobile)
+                left: 102px
+    &__listTitle
+        z-index: 1
+        display: flex
+        justify-content: center
+        align-items: center
+        flex: 1
+        font-weight: 400
+        font-size: 16px
+        color: $titleColor
+        cursor: pointer
+        transition-property: font-weight, color
+        transition-duration: .3s
+        transition-timing-function: ease
+        @media (max-width: $mobile)
+            font-size: 14px
+        &Active
+            font-weight: 700
+            color: $blockCommonBgColor
+            cursor: default

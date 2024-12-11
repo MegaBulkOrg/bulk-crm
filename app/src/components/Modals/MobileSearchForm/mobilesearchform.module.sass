@@ -1,0 +1,58 @@
+@import '../../../global_styles/vars.module'
+
+.mobileSearchForm
+    display: flex
+    justify-content: center
+    padding-top: 100px
+    width: 100%
+    &__form
+        position: relative
+        display: flex
+        gap: 10px
+        flex-direction: row-reverse
+        align-items: center
+        width: 60%
+        height: fit-content
+        padding: 10px
+        background-color: $blockCommonBgColor
+        border-radius: 10px
+        box-shadow: $blockCommonShadow
+        @media (max-width: $mobile)
+            width: 90%
+        & svg
+            color: $secondGreyColor
+            transition: color .3s ease
+    &__errorForm
+        border: 1px solid $errorColor
+        &:hover:not(:focus-visible):enabled
+            border: 1px solid $errorColor
+        &:focus-visible:enabled
+            border: 1px solid $errorColor
+        &:active:not(:focus-visible):enabled
+            border: 1px solid $errorColor
+    &__field
+        width: 100%
+        border: none
+        font-size: 15px
+        color: $titleColor
+        &:disabled
+            cursor: not-allowed
+        &::placeholder
+            color: $titleColor
+            font-size: 15px
+            font-weight: 400
+        &:hover:not(:focus-visible):enabled + svg
+            color: $brandBlueColor
+        &:focus-visible:enabled + svg
+            color: $brandBlueColor
+        &:active:not(:focus-visible):enabled + svg
+            color: $brandBlueColor
+    &__searchErrorMsg
+        position: absolute
+        right: 10px
+        bottom: -20px
+        left: 10px
+        color: $errorColor
+        font-weight: 600
+        font-size: 12px
+        line-height: 150%

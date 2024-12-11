@@ -1,0 +1,141 @@
+@import '../../../global_styles/vars.module'
+@import '../../../global_styles/mixins.module'
+
+.container
+    position: relative
+    display: flex
+    max-width: 264px
+    flex-direction: column
+    padding: 25px 0 10px 0
+    border-radius: 24px
+    background-color: $blockCommonBgColor
+    box-shadow: $blockCommonShadow
+    @media (max-width: $tablet)
+        max-width: none
+.dealinfo
+    &__up
+        padding: 0 25px 30px 25px
+        border-bottom: 1px $dividerColor solid
+        @media (max-width: $mobile)
+            padding: 0 20px 20px 20px
+    &__editButton
+        position: absolute
+        top: 15px
+        right: 15px
+        padding: 10px
+        color: $titleColor
+        background-color: $blockCommonBgColor
+        border: none
+        border-radius: 14px
+        font-size: 25px
+        background: $contentBgColor
+        cursor: pointer
+        transition-property: color, background-color
+        transition-duration: .3s
+        transition-timing-function: ease
+        &:hover:not(:focus-visible)
+            color: $blockCommonBgColor
+            background-color: $brandBlueColor
+        &:focus-visible
+            color: $blockCommonBgColor
+            background-color: $brandBlueColor
+        &:active:not(:focus-visible)
+            color: $blockCommonBgColor
+            background-color: $brandBlueColor
+    &__title
+        margin-top: 0
+        margin-bottom: 15px
+        // в Chrome без text-align заголовок выравнивается по центру
+        text-align: left
+        font-weight: 700
+        font-size: 18px
+        line-height: 144%
+        color: $titleColor
+    &__client
+        margin-bottom: 30px
+        &:hover:not(:focus-visible) p
+            color: $brandBlueColor
+        &:focus-visible p
+            color: $brandBlueColor
+        &:active:not(:focus-visible) p
+            color: $brandBlueColor
+        &:hover:not(:focus-visible) .dealinfo__imgWrapper::before
+            border: 2px solid $brandBlueColor
+        &:focus-visible .dealinfo__imgWrapper::before
+            border: 2px solid $brandBlueColor
+        &:active:not(:focus-visible) .dealinfo__imgWrapper::before
+            border: 2px solid $brandBlueColor
+    @include userImg
+    &__imgWrapper
+        &::before
+            border: 2px solid $brandGreyColor
+    &__clientTitle
+        font-weight: 400
+        font-size: 16px
+        line-height: 150%
+        color: $titleColor
+        transition: color .3s ease
+    &__managerTitle
+        // в Chrome без text-align заголовок выравнивается по центру
+        text-align: left
+        color: $secondGreyColor
+        font-weight: 400
+        font-size: 14px
+    &__manager
+        &:hover:not(:focus-visible) p
+            color: $brandBlueColor
+        &:focus-visible p
+            color: $brandBlueColor
+        &:active:not(:focus-visible) p
+            color: $brandBlueColor
+        &Avatar
+            width: 25px
+            height: 25px
+            object-fit: cover
+            object-position: center
+            border-radius: 100%
+        & p
+            font-weight: 400
+            font-size: 16px
+            line-height: 150%
+            color: $titleColor
+            transition: color .3s ease
+    &__down
+        padding: 30px 25px 0 25px
+        @media (max-width: $mobile)
+            padding: 20px 20px 0 20px
+    &__content
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        gap: 25px
+        margin-bottom: 30px
+        @media (max-width: $tablet)
+            flex-direction: row
+            justify-content: space-between
+        @media (max-width: $mobile)
+            flex-direction: column
+            gap: 20px
+        &__item
+            display: flex
+            flex-direction: column
+            gap: 10px
+            padding: 0 5px
+            &Title
+                margin: 0
+                font-weight: 700
+                font-size: 14px
+                line-height: 171%
+                color: $brandGreyColor
+            &Value
+                margin: 0
+                display: flex
+                align-items: center
+                padding: 12px 20px
+                border: 1px solid $thirdGreyColor
+                border-radius: 14px
+                box-shadow: $userInfoFieldShadow
+                font-weight: 400
+                font-size: 14px
+                line-height: 171%
+                color: $brandGreyColor

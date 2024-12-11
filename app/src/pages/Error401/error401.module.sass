@@ -1,0 +1,73 @@
+@import '../../global_styles/vars.module'
+@import '../../global_styles/mixins.module'
+
+.container    
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    gap: 25px
+    height: 100%
+    background-color: $blockCommonBgColor
+    border-radius: 24px
+    box-shadow: $blockCommonShadow
+    @media (max-width: $mobile)
+        height: auto
+        padding: 55px 8px 65px 8px
+
+.error    
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 100%
+    padding: 20px 40px
+    background-color: $contentBgColor
+    @media (max-width: $mobile)
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 10px        
+        padding: 20px 20px 0 20px
+    &__logo
+        width: 80px
+    &__pageImg
+        width: auto
+        height: 360px
+        @media (max-width: $mobile)
+            width: 80%
+            max-width: 490px
+            height: auto
+    &__text
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 10px
+        & h1
+            margin: 0
+            font-weight: 700
+            font-size: 36px
+            color: $titleColor
+            @media (max-width: $mobile)
+                font-size: 25px
+                line-height: 144%
+        & h2
+            margin: 0
+            font-weight: 700
+            font-size: 22px
+            text-align: center
+            color: $titleColor
+            @media (max-width: $mobile)
+                font-size: 20px
+    &__toHome
+        @include commonButton
+        &:hover:not(:focus-visible) svg
+            transform: translateX(10px)
+        &:focus-visible svg
+            transform: translateX(10px)
+        &:active:not(:focus-visible) svg
+            transform: translateX(10px)
+        & svg
+            transition: transform .3s ease

@@ -1,0 +1,134 @@
+@import '../../global_styles/vars.module'
+
+.content
+    padding: 25px 0
+    background-color: $contentBgColor
+    @media (max-width: $mobile)
+        padding: 10px 0 55px 0
+    &__container
+        display: flex
+        gap: 30px
+        padding: 0 30px
+        margin: 0 auto
+        max-width: 1440px
+        @media (max-width: $mobile)
+            // flex убираем ради сладера в блоке со сделками
+            display: block
+            padding: 0 10px
+    &__wrapper
+        flex: 1
+    &__quickAddBtn
+        position: fixed
+        z-index: 1
+        right: 25px
+        bottom: 75px
+        width: 55px
+        height: 55px
+        background-color: $brandBlueColor
+        border: none
+        border-radius: 100%
+        box-shadow: $buttonCommonShadow
+        cursor: pointer
+        transition: background-color .3s ease
+        &:hover:not(:focus-visible)
+            background-color: $secondBlueColor
+        &:focus-visible
+            background-color: $secondBlueColor
+        &:active:not(:focus-visible)
+            background-color: $secondBlueColor
+        & svg
+            font-size: 20px
+            color: $blockCommonBgColor
+        @media (max-width: $mobile)
+            bottom: 20px
+
+.modalWrapper
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: -20
+    display: flex
+    background-color: rgba(33, 85, 163, 0.16)
+    opacity: 0
+    backdrop-filter: blur(4px)
+    -webkit-backdrop-filter: blur(4px)
+    transition: opacity .3s ease
+.modalActiveCentered
+    z-index: 20
+    justify-content: center
+    align-items: center
+    opacity: 1
+.modalActive
+    z-index: 20
+    opacity: 1
+.modalActiveBottom
+    z-index: 20
+    align-items: end
+    opacity: 1
+
+.notifications
+    position: fixed
+    top: 20px
+    right: 40px
+    z-index: 25
+    background-color: $blockCommonBgColor
+    border-radius: 24px
+    box-shadow: $notificationsModalShadow
+    @media (max-width: $mobile)
+        top: 10px
+        right: 10px
+        left: 10px
+    &__titleWrapper
+        display: flex
+        justify-content: space-between
+        align-items: baseline
+        // padding: 30px 30px 24px 30px
+        padding: 15px 30px
+        border-bottom: 1px solid $dividerColor
+    &__closeBtn        
+        padding: 10px 15px
+        border: none
+        border-radius: 14px
+        background-color: $contentBgColor
+        font-size: 25px
+        color: $titleColor
+        cursor: pointer
+        transition-property: background-color, color
+        transition-duration: .3s
+        transition-timing-function: ease
+        &:hover:not(:focus-visible)
+            background-color: $brandBlueColor
+            color: $blockCommonBgColor
+        &:focus-visible
+            background-color: $brandBlueColor
+            color: $blockCommonBgColor
+        &:active:not(:focus-visible)
+            background-color: $brandBlueColor
+            color: $blockCommonBgColor
+        @media (max-width: $mobile)
+            top: 20px
+            right: 20px
+            padding: 6px 10px
+            font-size: 16px   
+    &__title
+        margin: 0
+        font-weight: 700
+        font-size: 22px
+        color: $titleColor
+        @media (max-width: $mobile)
+            padding-right: 50px
+            font-size: 18px
+            line-height: 144%
+    &__content
+        // padding: 30px
+        padding: 20px
+        max-width: 380px
+        @media (max-width: $mobile)
+            max-width: none
+    &__text
+        font-weight: 400
+        font-size: 16px
+        line-height: 150%
+        color: $titleColor

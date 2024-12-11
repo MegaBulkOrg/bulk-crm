@@ -1,0 +1,116 @@
+@import '../../global_styles/vars.module'
+@import '../../global_styles/mixins.module'
+
+.header
+    display: flex
+    flex-direction: column
+    gap: 50px
+    margin-bottom: 30px
+    @media (max-width: $mobile)
+        gap: 30px
+        margin-bottom: 20px
+    &__up
+        display: flex
+        justify-content: space-between
+        gap: 10px
+    &__form
+        position: relative
+        width: 50%
+        max-width: 415px
+        & svg
+            position: absolute
+            top: 15px
+            left: 20px
+        &Field
+            width: 100%
+            padding: 12px 30px 12px 55px
+            background-color: $blockCommonBgColor
+            border: 1px solid $blockCommonBgColor
+            border-radius: 14px
+            box-shadow: $blockCommonShadow
+            transition: border .3s ease
+            &:hover:not(:focus-visible):enabled
+                border: 1px solid $brandBlueColor
+            &:focus-visible:enabled
+                border: 1px solid $brandBlueColor
+            &:active:not(:focus-visible):enabled
+                border: 1px solid $brandBlueColor
+            &:disabled
+                cursor: not-allowed
+            &::placeholder
+                font-weight: 400
+                font-size: 16px
+                color: $brandGreyColor
+        &ErrorField
+            @include errorFormField
+        &__searchErrorMsg
+            @include errorFormFieldMsg
+    &__me
+        display: flex
+        align-items: center
+        gap: 10px
+        padding: 10px 15px
+        background-color: $blockCommonBgColor
+        border-radius: 14px
+        box-shadow: $blockCommonShadow
+        &Avatar
+            width: 30px
+            height: 30px
+            object-fit: cover
+            object-position: center
+            border-radius: 100%
+        &Name
+            font-weight: 700
+            font-size: 16px
+            line-height: 150%
+            color: $titleColor
+    &__down
+        display: flex
+        flex-direction: column
+        gap: 10px
+        padding: 0 10px
+    &__helloText
+        margin: 0
+        padding: 0 10px
+        font-weight: 400
+        font-size: 16px
+        color: $brandGreyColor
+        @media (max-width: $mobile)
+            padding: 0 20px
+            font-size: 16px
+    &__backToHome
+        @include blockLinkLeft
+        align-self: start
+        @media (max-width: $mobile)
+            padding: 0 10px
+    &__titleWrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+        flex-wrap: wrap
+        gap: 20px
+        & h1
+            margin: 0
+            font-weight: 700
+            font-size: 36px
+            color: $titleColor
+            @media (max-width: $mobile)
+                padding: 0 10px
+    &__date
+        display: flex
+        align-items: center
+        gap: 15px
+        padding: 10px 15px
+        font-weight: 400
+        font-size: 16px
+        line-height: 150%
+        color: $titleColor
+        background-color: $headerDateBgColor
+        border-radius: 14px
+        box-shadow: $blockCommonShadow
+        & svg
+            font-size: 25px
+    &__addButton
+        @include commonButton
+    &__sortBtn
+        @include sortBtn

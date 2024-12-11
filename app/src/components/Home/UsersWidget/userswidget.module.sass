@@ -1,0 +1,29 @@
+@import '../../../global_styles/vars.module'
+@import '../../../global_styles/mixins.module'
+
+.container
+    display: flex
+    flex-direction: column
+    gap: 20px
+    padding: 30px 20px 20px 20px
+    border-radius: 24px
+    background-color: $blockCommonBgColor
+    box-shadow: $blockCommonShadow
+    @media (max-width: $mobile)
+        gap: 15px
+        padding: 20px 10px 10px 10px
+.userswidget
+    @include homeWidgetTitleBlock
+    &__msg
+        @include dataFetchingMsg
+    &__list
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        grid-template-rows: repeat(2, auto)
+        gap: 15px
+        @media (max-width: $smallDesktop)
+            grid-template-columns: repeat(3, 1fr)
+        @media (max-width: $bigTablet)
+            grid-template-columns: repeat(2, 1fr)
+        @media (max-width: $mobile)
+            gap: 10px

@@ -1,0 +1,36 @@
+@import '../../../global_styles/vars.module'
+@import '../../../global_styles/mixins.module'
+
+.item
+    display: flex
+    flex-direction: column
+    gap: 10px
+    padding: 15px 20px
+    background-color: $blockCommonBgColor
+    border-radius: 14px
+    box-shadow: $blockCommonShadow
+    cursor: pointer
+    &__up
+        display: flex
+        flex-direction: column
+    &__title
+        font-weight: 700
+        font-size: 16px
+        line-height: 150%
+        color: $titleColor
+        & svg
+            padding: 0 10px
+    &__subtitle
+        font-weight: 400
+        font-size: 14px
+        color: $secondGreyColor
+    &__textWrapper
+        font-weight: 400
+        font-size: 16px
+        line-height: 150%
+        color: $titleColor
+        word-break: break-word
+        & ul
+            padding: 0 0 0 40px
+            margin: 1em 0
+            list-style: disc

@@ -1,0 +1,25 @@
+@import '../../../global_styles/vars.module'
+@import '../../../global_styles/mixins.module'
+
+.container
+    display: flex
+    flex-direction: column
+    gap: 25px
+    padding: 30px 25px
+    height: 100%
+    border-radius: 24px
+    background-color: $blockCommonBgColor
+    box-shadow: $blockCommonShadow
+    @media (max-width: $tablet)
+        padding: 0
+        background-color: transparent
+    @media (max-width: $mobile)
+        gap: 20px
+.dealswidget
+    @include homeWidgetTitleBlock
+    &__msg
+        @include dataFetchingMsg
+    &__list
+        display: flex
+        flex-direction: column
+        gap: 25px

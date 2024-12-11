@@ -1,0 +1,134 @@
+@import '../../../global_styles/vars.module'
+@import '../../../global_styles/mixins.module'
+
+.item
+    display: flex
+    background-color: $blockCommonBgColor
+    border-radius: 24px
+    box-shadow: $blockCommonShadow
+    transition: background-color .3s ease
+    &:hover:not(:focus-visible)
+        background: linear-gradient(90deg, $brandBlueColor 50%, $blockCommonBgColor 60%)
+    &:focus-visible
+        background: linear-gradient(90deg, $brandBlueColor 50%, $blockCommonBgColor 60%)
+    &:active:not(:focus-visible)
+        background: linear-gradient(90deg, $brandBlueColor 50%, $blockCommonBgColor 60%)
+    &:hover:not(:focus-visible) .item__contact,
+    &:hover:not(:focus-visible) .item__title,
+    &:hover:not(:focus-visible) .item__date,
+    &:hover:not(:focus-visible) .item__type
+        color: $blockCommonBgColor
+    &:focus-visible .item__contact,
+    &:focus-visible .item__title,
+    &:focus-visible .item__date,
+    &:focus-visible .item__type
+        color: $blockCommonBgColor
+    &:active:not(:focus-visible) .item__contact,
+    &:active:not(:focus-visible) .item__title,
+    &:active:not(:focus-visible) .item__date,
+    &:active:not(:focus-visible) .item__type
+        color: $blockCommonBgColor
+    @media (max-width: $bigTablet)
+        flex-direction: column
+        padding: 20px
+        &:hover:not(:focus-visible)
+            background: linear-gradient(180deg, $brandBlueColor 50%, $blockCommonBgColor 75%)
+        &:focus-visible
+            background: linear-gradient(180deg, $brandBlueColor 50%, $blockCommonBgColor 75%)
+        &:active:not(:focus-visible)
+            background: linear-gradient(180deg, $brandBlueColor 50%, $blockCommonBgColor 75%)
+    &__left
+        display: flex
+        flex-direction: column
+        gap: 25px
+        width: 50%
+        padding: 25px 40px 30px 25px
+        border-right: 1px solid $dividerColor
+        @media (max-width: $bigTablet)
+            width: 100%
+            padding: 0 0 25px 0
+            border-right: none
+            border-bottom: 1px solid $dividerColor
+        &Up
+            display: flex
+            gap: 20px
+        &Down
+            display: flex
+            justify-content: space-between
+    &__logo
+        width: 50px
+        height: 50px
+        object-fit: cover
+        object-position: center
+        border-radius: 14px
+    &__titleWrapper
+        display: flex
+        flex-direction: column
+        gap: 5px
+    &__contact
+        font-weight: 400
+        font-size: 14px
+        color: $secondGreyColor
+        transition: color .3s ease
+    &__title
+        margin: 0
+        font-weight: 700
+        font-size: 18px
+        line-height: 144%
+        color: $titleColor
+        transition: color .3s ease
+    &__date
+        display: flex
+        align-items: center
+        gap: 10px
+        font-weight: 600
+        font-size: 14px
+        line-height: 114%
+        color: $brandGreyColor
+        transition: color .3s ease
+    &__type
+        font-weight: 700
+        font-size: 14px
+        line-height: 114%
+        transition: color .3s ease
+    &__org
+        color: $secondGreyColor
+    &__ind
+        color: $brandBlueColor
+    &__right
+        display: flex
+        flex-direction: column
+        gap: 15px
+        width: 50%
+        padding: 30px 45px 30px 45px
+        @media (max-width: $bigTablet)
+            width: 100%
+            padding: 25px 0 0 0
+        &Title
+            margin: 0
+            font-weight: 700
+            font-size: 16px
+            line-height: 150%
+            color: $titleColor
+    &__info
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-template-rows: repeat(2, auto)
+        gap: 5px 40px
+        @media (max-width: $mobile)
+            gap: 5px 30px
+        &Title
+            font-weight: 400
+            font-size: 14px
+            color: $secondGreyColor
+        &Value
+            font-weight: 700
+            font-size: 16px
+            line-height: 150%
+            color: $titleColor
+    &__user
+        width: 25px
+        height: 25px
+        object-fit: cover
+        object-position: center
+        border-radius: 100%

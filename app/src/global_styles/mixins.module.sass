@@ -1,0 +1,210 @@
+@mixin blockLink
+    display: flex
+    align-items: center
+    gap: 10px
+    font-weight: 600
+    font-size: 16px
+    color: $brandBlueColor
+    & svg
+        transition: transform .3s ease
+@mixin blockLinkLeft
+    @include blockLink
+    &:hover:not(:focus-visible) svg
+        transform: translateX(-10px)
+    &:focus-visible svg
+        transform: translateX(-10px)
+    &:active:not(:focus-visible) svg
+        transform: translateX(-10px)
+@mixin blockLinkRight
+    @include blockLink
+    &:hover:not(:focus-visible) svg
+        transform: translateX(10px)
+    &:focus-visible svg
+        transform: translateX(10px)
+    &:active:not(:focus-visible) svg
+        transform: translateX(10px)
+@mixin blockLinkDown
+    @include blockLink
+    &:hover:not(:focus-visible) svg
+        transform: translateY(10px)
+    &:focus-visible svg
+        transform: translateY(10px)
+    &:active:not(:focus-visible) svg
+        transform: translateY(10px)
+@mixin homeWidgetTitle
+    margin: 0
+    font-weight: 700
+    font-size: 22px
+    color: $titleColor
+@mixin homeWidgetTitleBlock
+    &__titleWrapper
+        display: flex
+        justify-content: space-between
+        align-items: baseline
+        flex-wrap: wrap
+        gap: 5px
+        padding: 0 10px
+    &__title
+        @include homeWidgetTitle
+    &__goToPageLink
+        @include blockLinkRight
+@mixin userImg
+    &__imgWrapper
+        position: relative
+        width: 50px
+        height: 50px
+        object-fit: cover
+        object-position: center
+        margin-bottom: 20px
+        border-radius: 100%
+        &::before
+            content: ''
+            position: absolute
+            top: -5px
+            right: -5px
+            bottom: -5px
+            left: -5px
+            border: 2px solid $brandBlueColor
+            border-radius: 100%
+            background-color: transparent
+            transition: border .3s ease
+        @media (max-width: $mobile)
+            width: 60px
+            height: 60px
+    &__img
+        position: absolute
+        width: 100%
+        height: 100%
+        object-fit: cover
+        border-radius: 100%
+@mixin dataFetchingMsg
+    padding: 0 10px
+    font-weight: 400
+    font-size: 16px
+    line-height: 150%
+    color: $titleColor
+@mixin commonButton
+    display: flex
+    align-items: center
+    gap: 10px
+    padding: 15px 20px
+    background-color: $brandBlueColor
+    color: $blockCommonBgColor
+    font-weight: 700
+    font-size: 16px
+    border-radius: 14px
+    border: none
+    box-shadow: $buttonCommonShadow
+    cursor: pointer
+    transition: background-color .3s ease
+    &:hover:not(:focus-visible):enabled
+        background-color: $secondBlueColor
+    &:focus-visible:enabled
+        background-color: $secondBlueColor
+    &:active:not(:focus-visible):enabled
+        background-color: $secondBlueColor
+    &:disabled
+        background-color: $disabledButtonColor
+        cursor: not-allowed
+@mixin sortBtn
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 48px
+    height: 48px
+    background-color: $blockCommonBgColor
+    box-shadow: $blockCommonShadow
+    border-radius: 14px
+    font-size: 24px
+    cursor: pointer
+    transition-property: background-color, color
+    transition-duration: .3s
+    transition-timing-function: ease
+    &:hover:not(:focus-visible)
+        background-color: $brandBlueColor
+        color: $blockCommonBgColor
+    &:focus-visible
+        background-color: $brandBlueColor
+        color: $blockCommonBgColor
+    &:active:not(:focus-visible)
+        background-color: $brandBlueColor
+        color: $blockCommonBgColor
+@mixin errorFormField
+    border: 1px solid $errorColor
+    &:hover:not(:focus-visible):enabled
+        border: 1px solid $errorColor
+    &:focus-visible:enabled
+        border: 1px solid $errorColor
+    &:active:not(:focus-visible):enabled
+        border: 1px solid $errorColor
+@mixin errorFormFieldMsg    
+    margin: 0
+    padding: 0 10px
+    color: $errorColor
+    font-weight: 600
+    font-size: 12px
+    line-height: 150%   
+@mixin commonModalForm
+    display: flex
+    flex-direction: column
+    gap: 12px
+    @media (max-width: $mobile)
+        gap: 20px
+@mixin commonModalFormСloseBtn
+    position: absolute
+    top: 30px
+    right: 30px
+    padding: 10px 15px
+    border: none
+    border-radius: 14px
+    background-color: $contentBgColor
+    font-size: 25px
+    color: $titleColor
+    cursor: pointer
+    transition-property: background-color, color
+    transition-duration: .3s
+    transition-timing-function: ease
+    &:hover:not(:focus-visible)
+        background-color: $brandBlueColor
+        color: $blockCommonBgColor
+    &:focus-visible
+        background-color: $brandBlueColor
+        color: $blockCommonBgColor
+    &:active:not(:focus-visible)
+        background-color: $brandBlueColor
+        color: $blockCommonBgColor
+    @media (max-width: $mobile)
+        top: 20px
+        right: 20px
+        padding: 6px 10px
+        font-size: 16px    
+@mixin commonModalFormAttachBtn
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 45px
+    height: 45px
+    font-size: 28px
+    color: $brandPurpleColor
+    background: $modalFormAttachBtnBgColor
+    border: none
+    border-radius: 14px
+    cursor: pointer
+    transition-property: background-color, color
+    transition-duration: .3s
+    transition-timing-function: ease
+    &:hover:not(:focus-visible)
+        color: $titleColor
+        background-color: $contentBgColor
+    &:focus-visible
+        color: $titleColor
+        background-color: $contentBgColor
+    &:active:not(:focus-visible)
+        color: $titleColor
+        background-color: $contentBgColor
+@mixin commonModalFormSubmitBtn
+    align-self: flex-end
+    @media (max-width: $mobile)
+        display: flex
+        justify-content: center
+        width: 100%

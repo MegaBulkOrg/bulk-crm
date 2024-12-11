@@ -1,0 +1,15 @@
+@import '../../../global_styles/vars.module'
+@import '../../../global_styles/mixins.module'
+
+.container
+    display: flex
+    flex-direction: column
+    gap: 20px
+.clientswidget
+    @include homeWidgetTitleBlock
+    &__msg
+        @include dataFetchingMsg
+    &__list
+        display: flex
+        flex-direction: column
+        gap: 20px

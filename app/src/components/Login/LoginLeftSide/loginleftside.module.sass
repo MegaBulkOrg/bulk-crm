@@ -1,0 +1,34 @@
+@import '../../../global_styles/vars.module'
+    
+.loginleftside
+    display: flex
+    flex-direction: column
+    gap: 45px
+    // justify-content: space-evenly
+    width: 50%
+    padding: 60px 95px 80px 95px
+    background-color: $brandBlueColor
+    border-top-left-radius: 24px
+    border-bottom-left-radius: 24px
+    @media (max-width: $bigTablet)
+        padding: 60px 20px 80px 20px
+    @media (max-width: $mobile)
+        display: none
+    &__titleWrapper
+        display: flex
+        align-items: center
+        gap: 30px
+    &__logo
+        width: auto
+        height: 50px
+    &__title
+        color: $blockCommonBgColor
+        font-weight: 700
+        font-size: 30px
+    &__slogan        
+        font-weight: 700
+        font-size: 40px
+        line-height: 140%
+        color: $blockCommonBgColor
+        @media (max-width: $bigTablet)
+            font-size: 30px

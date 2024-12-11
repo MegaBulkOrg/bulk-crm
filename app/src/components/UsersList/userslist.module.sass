@@ -1,0 +1,67 @@
+@import '../../global_styles/mixins.module'
+@import '../../global_styles/vars.module'
+
+.userslist
+    display: flex
+    flex-direction: column
+    gap: 30px
+    @media (max-width: $mobile)
+        gap: 20px
+    &__msg
+        @include dataFetchingMsg
+    &__list
+        display: flex
+        flex-direction: column
+        gap: 30px
+        @media (max-width: $mobile)
+            gap: 20px
+    &__gridWrapper
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        grid-template-rows: repeat(2, auto)
+        gap: 30px
+        @media (max-width: $smallDesktop)
+            grid-template-columns: repeat(3, 1fr)
+        @media (max-width: $bigTablet)
+            grid-template-columns: repeat(2, 1fr)
+        @media (max-width: $tablet)
+            grid-template-columns: repeat(1, 1fr)
+            gap: 20px
+    &__pagination
+        display: flex
+        justify-content: end
+        @media (max-width: $mobile)
+            justify-content: center
+        &__wrapper
+            display: flex
+            align-items: center
+            gap: 25px
+            padding: 10px 20px
+            background-color: $blockCommonBgColor
+            box-shadow: $blockCommonShadow
+            border-radius: 14px
+        &__info
+            font-weight: 400
+            font-size: 16px
+            line-height: 150%
+            color: $titleColor
+        &_btns
+            display: flex
+            gap: 14px
+            font-size: 18px
+        &__btn
+            color: $titleColor
+            background-color: $blockCommonBgColor
+            border: none
+            cursor: pointer
+            transition: color .3s ease
+            &:hover:not(:focus-visible):enabled
+                color: $brandBlueColor
+            &:focus-visible:enabled
+                color: $brandBlueColor
+            &:active:not(:focus-visible):enabled
+                color: $brandBlueColor
+            &:disabled
+                background-color: $blockCommonBgColor
+                color: $paginationDisabledButtonColor
+                cursor: not-allowed

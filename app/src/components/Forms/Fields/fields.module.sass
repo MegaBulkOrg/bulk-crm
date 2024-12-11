@@ -1,0 +1,67 @@
+@import '../../../global_styles/vars.module'
+@import '../../../global_styles/mixins.module'
+
+.formGroup
+    position: relative
+    display: flex
+    flex-direction: column
+    width: 100%
+
+.formLabel
+    padding: 0 10px 5px 10px
+    font-weight: 700
+    font-size: 14px
+    line-height: 171%
+    color: $brandGreyColor
+    
+.formInput
+    padding: 12px 18px
+    border: 1px solid $thirdGreyColor
+    border-radius: 14px
+    box-shadow: $userInfoFieldShadow
+    font-weight: 400
+    font-size: 14px
+    line-height: 171%
+    color: $titleColor
+    transition: border .3s ease            
+    &:hover:not(:focus-visible):enabled
+        border: 1px solid $brandBlueColor
+    &:focus-visible:enabled
+        border: 1px solid $brandBlueColor
+    &:active:not(:focus-visible):enabled
+        border: 1px solid $brandBlueColor
+    &:disabled
+        cursor: not-allowed
+    &::placeholder
+        color: $brandGreyColor
+
+.eye
+    position: absolute
+    top: 45px
+    right: 18px
+    color: $brandGreyColor
+    cursor: pointer
+
+.formGroupError
+    & label
+        color: $errorColor
+    & input
+        @include errorFormField
+
+.formInputErrorMsg
+    @include errorFormFieldMsg
+    bottom: -18px
+
+.formSelectErrorMsg
+    @include errorFormFieldMsg
+    bottom: -20px
+
+.attach
+    display: flex
+    align-items: center
+    gap: 15px
+    &__btn
+        @include commonModalFormAttachBtn
+    &__filename
+        @media (max-width: $mobile)
+            font-size: 12px !important

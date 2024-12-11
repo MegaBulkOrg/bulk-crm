@@ -1,0 +1,111 @@
+@import 'normalize.css/normalize.css';
+
+* {
+    box-sizing: border-box;
+}
+
+*:focus-visible {
+    outline: none;
+}
+
+html {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+img {
+    width: 100%;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none
+}
+
+a {
+    text-decoration: none;
+}
+
+.swiper-container{
+    width: 100%;
+}
+
+.formSelect__control {
+    padding: 6px 8px;
+    border: 1px solid #d8e0f0 !important;
+    border-radius: 14px !important;
+    box-shadow: 0 1px 2px 0 rgba(184, 200, 224, 0.22) !important;
+    transition: border .3s ease !important;
+}
+
+.form-select-error .formSelect__control {
+    border: 1px solid #f65160 !important
+}
+
+.formSelect__control:hover:not(:focus-visible) {
+    border: 1px solid #3f8cff !important;
+}
+    
+.formSelect__control:focus-visible {
+    border: 1px solid #3f8cff !important;
+}
+
+.formSelect__control:active:not(:focus-visible) {
+    border: 1px solid #3f8cff !important;
+}
+
+.formSelect__indicator-separator {
+    display: none;
+}
+
+.formSelect__indicator svg {
+    transition-property: transform, color !important;
+    transition-duration: .3s !important;
+    transition-timing-function: ease !important;
+}
+
+.formSelect__control--is-focused svg {
+    transform: rotate(-180deg);
+    color: #3f8cff;
+}
+
+.formSelect__control--is-focused {
+    border: 1px solid #3f8cff !important;
+}
+
+.formSelect__single-value, .formSelect__placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 171%
+}
+
+.formSelect__single-value {
+    color: #0a1629 !important;
+}
+
+.formSelect__placeholder {
+    color: #7d8592 !important;
+}
+
+.formSelect__menu {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 171%;
+    color: #0a1629;
+}
+
+.ql-toolbar.ql-snow {
+    border: 1px solid #d8e0f0;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
+.ql-container {
+    height: 200px;
+}
+
+.ql-container.ql-snow {
+    border: 1px solid #d8e0f0;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+}
