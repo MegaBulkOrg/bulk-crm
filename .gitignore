@@ -32,4 +32,4 @@ rest-api/.env
 _sandbox
 rest-api/node_modules
 .DS_Store
-rest-api/.DS_Store
+/**/.DS_Store
