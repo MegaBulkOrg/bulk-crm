@@ -10,7 +10,7 @@ export function HomeUsersItem(props:IUser) {
         <div className={styles.item__up}>
           <div className={styles.item__imgWrapper}>
             <img className={styles.item__img} src={props.avatar 
-              ? `http://${import.meta.env.VITE_REACT_APP_HOST}:${import.meta.env.VITE_REACT_API_PORT}/api/files/get-img/users/${props.avatar}` 
+              ? `${import.meta.env.VITE_REACT_APP_HOST}/api/files/get-img/users/${props.avatar}` 
               : noAvatar} 
             alt={props.name} />
           </div>

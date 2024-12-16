@@ -29,6 +29,7 @@ app/.env.production
 rest-api/.env
 
 # Other
+_sandbox
 rest-api/node_modules
 .DS_Store
 rest-api/.DS_Store

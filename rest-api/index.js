@@ -32,7 +32,7 @@ const clientPort = process.argv[2] === 'dev' ? process.env.APP_DEV_CLIENT_PORT :
 // origin и credentials указываются для работы с куками
 // без этих параметров не будут работать запросы если в fetchBaseQuery (api redux указано credentials: 'include')
 app.use(cors({
-  origin: `http://${host}:${clientPort}`,
+  origin: process.argv[2] === 'dev' ? `http://${host}:${clientPort}` : process.env.APP_DOMAIN,
   credentials: true
 }));
 app.use(cookieParser());
@@ -51,5 +51,7 @@ app.use(filesRouter(context));
 app.use(searchRouter(context));
 
 app.listen(port, () => {
-  console.log(`[index.js]: приложение запустилось на http://${host}:${port}`)
+  process.argv[2] === 'dev'
+    ? console.log(`[index.js]: приложение запустилось на http://${host}:${port}`)
+    : console.log(`[index.js]: приложение запустилось на ${process.env.APP_DOMAIN}`)
 });

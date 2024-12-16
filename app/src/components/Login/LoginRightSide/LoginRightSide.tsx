@@ -43,18 +43,22 @@ export function LoginRightSide() {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
   const onSubmit: SubmitHandler<TForm> = async (credentials) => {
-    const { data } = await signin(credentials)
+    const { data } = await signin(credentials)    
     if (data) setResponse(data)
-    if (data && data.status && data.accessToken) {         
+    if (data && data.status && data.accessToken) {
       // секретный ключ должен быть преобразован в формат Uint8Array
       const secretKey = new TextEncoder().encode(import.meta.env.VITE_REACT_JWT_ACCESS_SECRET);
-      const { payload } = await jwtVerify(data.accessToken, secretKey)         
-      dispatch(changeAuthStatus({
-        isAuth: data.status,
-        accessToken: data.accessToken,
-        authUserId: Number(payload.userId),
-        authUserRoleId: Number(payload.userRole)
-      }))
+      try {
+        const { payload } = await jwtVerify(data.accessToken, secretKey)
+        dispatch(changeAuthStatus({
+          isAuth: data.status,
+          accessToken: data.accessToken,
+          authUserId: Number(payload.userId),
+          authUserRoleId: Number(payload.userRole)
+        }))        
+      } catch (error) {
+        console.log(`LoginRightSide.tsx]: ошибка - ${error}`);
+      }
       // navigate(-1)
       navigate('/')
     }

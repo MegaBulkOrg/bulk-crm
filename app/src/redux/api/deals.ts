@@ -6,7 +6,7 @@ export const dealsApi = createApi({
   reducerPath: 'dealsApi',
   tagTypes: ['Deals'],
   baseQuery: fetchBaseQuery({
-    baseUrl: `http://${import.meta.env.VITE_REACT_APP_HOST}:${import.meta.env.VITE_REACT_API_PORT}/api/deals`,
+    baseUrl: `${import.meta.env.VITE_REACT_APP_HOST}/api/deals`,
     // следующая настройка для отправки кук
     // важно: на сервере в "cors" обязательно нужно указать origin и credentials
     credentials: 'include',

@@ -44,7 +44,7 @@ export function UsersListGridItem(props:IUser) {
             <div className={styles.gridItem__up__container}>
               <div className={styles.gridItem__up__imgWrapper}>
                 <img className={styles.gridItem__up__img} src={props.avatar 
-                  ? `http://${import.meta.env.VITE_REACT_APP_HOST}:${import.meta.env.VITE_REACT_API_PORT}/api/files/get-img/users/${props.avatar}` 
+                  ? `${import.meta.env.VITE_REACT_APP_HOST}/api/files/get-img/users/${props.avatar}` 
                   : noAvatar} 
                 alt={props.name} />
               </div>

@@ -41,7 +41,7 @@ export function UserPersonalInfo({ user }: { user: IUser }) {
                     }
                     <div className={styles.userpersonalinfo__imgWrapper}>
                         <img className={styles.userpersonalinfo__img} src={user.avatar 
-                            ? `http://${import.meta.env.VITE_REACT_APP_HOST}:${import.meta.env.VITE_REACT_API_PORT}/api/files/get-img/users/${user.avatar}` 
+                            ? `${import.meta.env.VITE_REACT_APP_HOST}/api/files/get-img/users/${user.avatar}` 
                             : noAvatar} alt={user.name} 
                         />
                     </div>

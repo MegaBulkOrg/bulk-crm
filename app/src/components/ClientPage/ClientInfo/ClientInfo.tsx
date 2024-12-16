@@ -77,7 +77,7 @@ export function ClientInfo({ client }: { client: IClient }) {
                     </button>
                     <div className={styles.clientinfo__imgWrapper}>
                         <img className={styles.clientinfo__img} src={client.logo 
-                            ? `http://${import.meta.env.VITE_REACT_APP_HOST}:${import.meta.env.VITE_REACT_API_PORT}/api/files/get-img/clients/${client.logo}` 
+                            ? `${import.meta.env.VITE_REACT_APP_HOST}/api/files/get-img/clients/${client.logo}` 
                             : noLogo} 
                         alt={client.title} />                    
                     </div>
@@ -93,7 +93,7 @@ export function ClientInfo({ client }: { client: IClient }) {
                         {isManagerSuccess && 'id' in manager &&
                             <Link className={styles.clientinfo__manager} to={`/users/${client.id_user}`}>
                                 <img className={styles.clientinfo__managerAvatar} src={manager.avatar 
-                                    ? `http://${import.meta.env.VITE_REACT_APP_HOST}:${import.meta.env.VITE_REACT_API_PORT}/api/files/get-img/users/${manager.avatar}` 
+                                    ? `${import.meta.env.VITE_REACT_APP_HOST}/api/files/get-img/users/${manager.avatar}` 
                                     : noAvatar} alt={manager.name} 
                                 />
                                 <p className={styles.clientinfo__infoItem__value}>{manager.name}</p>

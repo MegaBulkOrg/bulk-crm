@@ -6,7 +6,7 @@ export const searchApi = createApi({
   reducerPath: 'searchApi',
   tagTypes: ['Search'],
   baseQuery: fetchBaseQuery({
-    baseUrl: `http://${import.meta.env.VITE_REACT_APP_HOST}:${import.meta.env.VITE_REACT_API_PORT}/api/search`,
+    baseUrl: `${import.meta.env.VITE_REACT_APP_HOST}/api/search`,
     // следующая настройка для отправки кук
     // важно: на сервере в "cors" обязательно нужно указать origin и credentials
     credentials: 'include',

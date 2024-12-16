@@ -24,7 +24,7 @@ export function UsersListTableItem(props:IUser) {
                 <div className={styles.tableItem__wrapper}>  
                     <div className={styles.tableItem__left}>
                         <img src={props.avatar 
-                            ? `http://${import.meta.env.VITE_REACT_APP_HOST}:${import.meta.env.VITE_REACT_API_PORT}/api/files/get-img/users/${props.avatar}` 
+                            ? `${import.meta.env.VITE_REACT_APP_HOST}/api/files/get-img/users/${props.avatar}` 
                             : noAvatar} 
                         alt={props.name} />
                         <div className={styles.tableItem__leftFio}>

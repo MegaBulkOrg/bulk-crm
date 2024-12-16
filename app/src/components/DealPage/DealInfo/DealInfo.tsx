@@ -79,7 +79,7 @@ export function DealInfo({ deal }: { deal: IDeal }) {
                         <Link className={styles.dealinfo__client} to={`/clients/${deal.id_client}`}>
                             <div className={styles.dealinfo__imgWrapper}>
                                 <img className={styles.dealinfo__img} src={client.logo 
-                                    ? `http://${import.meta.env.VITE_REACT_APP_HOST}:${import.meta.env.VITE_REACT_API_PORT}/api/files/get-img/clients/${client.logo}` 
+                                    ? `${import.meta.env.VITE_REACT_APP_HOST}/api/files/get-img/clients/${client.logo}` 
                                     : noLogo} alt={client?.title} 
                                 />
                             </div>
@@ -93,7 +93,7 @@ export function DealInfo({ deal }: { deal: IDeal }) {
                     {isManagerSuccess && 'id' in manager && client && 'id' in client &&                   
                         <Link className={styles.dealinfo__manager} to={`/users/${client?.id_user || 1}`}>
                             <img className={styles.dealinfo__managerAvatar} src={manager.avatar 
-                                ? `http://${import.meta.env.VITE_REACT_APP_HOST}:${import.meta.env.VITE_REACT_API_PORT}/api/files/get-img/users/${manager.avatar}` 
+                                ? `${import.meta.env.VITE_REACT_APP_HOST}/api/files/get-img/users/${manager.avatar}` 
                                 : noAvatar} 
                             alt={manager?.name} />
                             <p className={styles.dealinfo__infoItem__value}>{manager.name}</p>

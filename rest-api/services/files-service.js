@@ -31,7 +31,7 @@ export default () => ({
             }            
         });
     },
-    getImg(folder, filename, res) { 
+    getImg(folder, filename, res) {        
         const filePath = path.join(path.resolve(), 'uploads/img', folder, filename);
         return !fs.existsSync(filePath)
             ? res.status(404).json({msg: 'Изображение не найдено'})

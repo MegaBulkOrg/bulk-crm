@@ -6,7 +6,7 @@ export const filesApi = createApi({
   reducerPath: 'filesApi',
   tagTypes: ['Files'],
   baseQuery: fetchBaseQuery({
-    baseUrl: `http://${import.meta.env.VITE_REACT_APP_HOST}:${import.meta.env.VITE_REACT_API_PORT}/api/files`,
+    baseUrl: `${import.meta.env.VITE_REACT_APP_HOST}/api/files`,
     // следующая настройка для отправки кук
     // важно: на сервере в "cors" обязательно нужно указать origin и credentials
     credentials: 'include',

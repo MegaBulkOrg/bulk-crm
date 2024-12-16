@@ -6,7 +6,7 @@ export const directoriesApi = createApi({
   reducerPath: 'directoriesApi',
   tagTypes: ['Directories'],
   baseQuery: fetchBaseQuery({
-    baseUrl: `http://${import.meta.env.VITE_REACT_APP_HOST}:${import.meta.env.VITE_REACT_API_PORT}/api/directories`,
+    baseUrl: `${import.meta.env.VITE_REACT_APP_HOST}/api/directories`,
     // следующая настройка для отправки кук
     // важно: на сервере в "cors" обязательно нужно указать origin и credentials
     credentials: 'include',

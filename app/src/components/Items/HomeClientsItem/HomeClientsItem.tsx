@@ -52,7 +52,7 @@ export function HomeClientsItem(props:IClient) {
       <Link className={styles.item__left} to={`/clients/${props.id}`}>
         <div className={styles.item__leftUp}>
           <img className={styles.item__logo} src={props.logo 
-            ? `http://${import.meta.env.VITE_REACT_APP_HOST}:${import.meta.env.VITE_REACT_API_PORT}/api/files/get-img/clients/${props.logo}` 
+            ? `${import.meta.env.VITE_REACT_APP_HOST}/api/files/get-img/clients/${props.logo}` 
             : noLogo} 
           alt={props.title} />
           <div className={styles.item__titleWrapper}>
@@ -83,7 +83,7 @@ export function HomeClientsItem(props:IClient) {
           {isUserSuccess && 'id' in user &&
             <Link to={`/users/${props.id_user}`}>
               <img className={styles.item__user} src={user.avatar 
-                ? `http://${import.meta.env.VITE_REACT_APP_HOST}:${import.meta.env.VITE_REACT_API_PORT}/api/files/get-img/users/${user.avatar}` 
+                ? `${import.meta.env.VITE_REACT_APP_HOST}/api/files/get-img/users/${user.avatar}` 
                 : noAvatar} 
               alt={user?.name} />
             </Link>

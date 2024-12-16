@@ -44,7 +44,7 @@ export function MobileHeaderPanel() {
         {/* notifications icon */}
         {isUserInfoSuccess && 'id' in userInfo &&
           <img className={styles.mPanel__meAvatar} src={userInfo.avatar 
-            ? `http://${import.meta.env.VITE_REACT_APP_HOST}:${import.meta.env.VITE_REACT_API_PORT}/api/files/get-img/users/${userInfo.avatar}` 
+            ? `${import.meta.env.VITE_REACT_APP_HOST}/api/files/get-img/users/${userInfo.avatar}` 
             : noAvatar} 
           alt={userInfo.name} />
         }
