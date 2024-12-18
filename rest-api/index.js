@@ -27,12 +27,11 @@ if (process.env.NODE_ENV === 'production') {
 
 const host = process.argv[2] === 'dev' ? process.env.APP_DEV_HOST : process.env.APP_PROD_HOST
 const port = process.argv[2] === 'dev' ? process.env.APP_DEV_PORT : process.env.APP_PROD_PORT
-const clientPort = process.argv[2] === 'dev' ? process.env.APP_DEV_CLIENT_PORT : process.env.APP_PROD_CLIENT_PORT
 
 // origin и credentials указываются для работы с куками
 // без этих параметров не будут работать запросы если в fetchBaseQuery (api redux указано credentials: 'include')
 app.use(cors({
-  origin: process.argv[2] === 'dev' ? `http://${host}:${clientPort}` : process.env.APP_DOMAIN,
+  origin: process.argv[2] === 'dev' ? `http://${host}:${process.env.APP_DEV_CLIENT_PORT}` : process.env.APP_PROD_DOMAIN,
   credentials: true
 }));
 app.use(cookieParser());
@@ -53,5 +52,5 @@ app.use(searchRouter(context));
 app.listen(port, () => {
   process.argv[2] === 'dev'
     ? console.log(`[index.js]: приложение запустилось на http://${host}:${port}`)
-    : console.log(`[index.js]: приложение запустилось на ${process.env.APP_DOMAIN}`)
+    : console.log(`[index.js]: приложение запустилось на ${process.env.APP_PROD_DOMAIN}`)
 });
