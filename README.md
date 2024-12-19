@@ -42,3 +42,4 @@
 - Express
 - MySQL
 - Knex
+- Bcrypt
